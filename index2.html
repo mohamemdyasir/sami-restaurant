@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>مطاعم سامي - فرع ود مدني</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+    <!-- ========================================== -->
+    <!-- شريط التنقل العلوي الثابت (نفس المنيو)     -->
+    <!-- ========================================== -->
+    <header class="header" id="header">
+        <div class="container header-container">
+            <div class="logo">
+                <img src="Gemini_Generated_Image_6r6m56r6m56r6m56-removebg-preview.png" alt="مطاعم سامي للأسماك" class="logo-img" />
+            </div>
+           <nav class="nav" id="navbar">
+                <a href="index2.html" class="nav-link" style="color: #dd0808;"><i class="fas fa-home"></i> سلسلة مطاعم سامي للأسماك والمشويات والعصائر الطازجة</a>
+                
+               
+            </nav>
+            <div class="header-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="تبديل الوضع">
+                    <i class="fas fa-sun"></i>
+                </button>
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ========================================== -->
+    <!-- محتوى الصفحة الترحيبية                     -->
+    <!-- ========================================== -->
+    <main class="landing-main">
+
+        <section class="landing-hero">
+            <div class="container landing-container">
+                <div class="landing-content">
+                    <!-- شارة الترحيب -->
+                    <span class="landing-badge"><i class="fas fa-fish"></i> أهلاً بك</span>
+                    
+                    <h1 class="landing-title">
+                       سلسلة مطاعم <span class="highlight">سامي</span>
+                    </h1>
+                    <h2 class="landing-subtitle">
+                        للأسماك والمشويات والعصائر الطازجة
+                    </h2>
+                    <p class="landing-branch">
+                        <i class="fas fa-location-dot"></i> فرع <strong>ود مدني</strong>
+                    </p>
+                    <p class="landing-desc">
+                        نقدم لك أشهى المأكولات البحرية والمشويات في أجواء عائلية مميزة. 
+                        اختر طريقة طلبك المفضلة:
+                    </p>
+
+                    <!-- الأزرار الرئيسية -->
+                    <div class="landing-buttons">
+                        <!-- زر الدليفري -->
+                        <button class="landing-btn delivery-btn" id="deliveryBtn">
+                            <i class="fas fa-truck"></i> دليفري
+                        </button>
+                        
+                        <!-- زر المحلي (ينقل للمنيو) -->
+                        <a href="index.html" class="landing-btn local-btn">
+                            <i class="fas fa-utensils"></i> محلي (فرع مدني)
+                        </a>
+                    </div>
+
+                    <!-- قسم عرض أرقام الدليفري (مخفي افتراضياً) -->
+                    <div class="delivery-numbers" id="deliveryNumbers">
+                        <div class="delivery-card">
+                            <i class="fas fa-phone-alt"></i>
+                            <div class="delivery-info">
+                                <span>للطلب والتوصيل:</span>
+                                <strong>0120290510</strong>
+                                <strong style="margin-top:5px;">0120290511</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

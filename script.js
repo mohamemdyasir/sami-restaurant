@@ -41,10 +41,47 @@ themeToggle.addEventListener('click', () => {
 });
 
 // ============================================================
-// 3. السكرول الناعم وتفعيل الروابط تلقائياً (Active Link)
+// 3. دالة إظهار أرقام الدليفري (خاصة بالصفحة الترحيبية)
+// ============================================================
+const deliveryBtn = document.getElementById('deliveryBtn');
+const deliveryNumbers = document.getElementById('deliveryNumbers');
+
+if (deliveryBtn && deliveryNumbers) {
+    deliveryBtn.addEventListener('click', function() {
+        deliveryNumbers.classList.toggle('show');
+        
+        if (deliveryNumbers.classList.contains('show')) {
+            deliveryBtn.innerHTML = '<i class="fas fa-phone"></i> اتصل بنا';
+        } else {
+            deliveryBtn.innerHTML = '<i class="fas fa-truck"></i> دليفري';
+        }
+    });
+}
+
+// ============================================================
+// 4. توليد QR Code (خاص بصفحة المنيو)
+// ============================================================
+window.addEventListener('load', function() {
+    const qrContainer = document.getElementById('qrcode');
+    if (qrContainer && typeof QRCode !== 'undefined') {
+        qrContainer.innerHTML = '';
+        const currentUrl = window.location.href;
+        new QRCode(qrContainer, {
+            text: currentUrl,
+            width: 200,
+            height: 200,
+            colorDark: "#F5C518",
+            colorLight: "#ffffff",
+            correctLevel: QRCode.CorrectLevel.H
+        });
+    }
+});
+
+// ============================================================
+// 5. السكرول الناعم وتفعيل الروابط (خاص بصفحة المنيو)
 // ============================================================
 const sections = document.querySelectorAll('.menu-section');
-const navLinks = document.querySelectorAll('.nav-link');
+const navLinks = document.querySelectorAll('.nav-link:not([href*="landing"])');
 
 function changeActiveLink() {
     let current = '';
@@ -66,9 +103,9 @@ function changeActiveLink() {
 window.addEventListener('scroll', changeActiveLink);
 
 // ============================================================
-// 4. منع السلوك الافتراضي للروابط (للسكرول الناعم)
+// 6. منع السلوك الافتراضي للروابط الداخلية (للسكرول الناعم)
 // ============================================================
-document.querySelectorAll('.nav-link').forEach(link => {
+document.querySelectorAll('.nav-link[href^="#"]').forEach(link => {
     link.addEventListener('click', function(e) {
         e.preventDefault();
         const targetId = this.getAttribute('href');
@@ -84,7 +121,7 @@ document.querySelectorAll('.nav-link').forEach(link => {
 });
 
 // ============================================================
-// 5. تهيئة أولية (لتحديد الرابط النشط عند التحميل)
+// 7. تهيئة أولية (لتحديد الرابط النشط عند التحميل)
 // ============================================================
 window.addEventListener('load', () => {
     changeActiveLink();
