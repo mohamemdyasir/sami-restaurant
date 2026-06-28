@@ -350,6 +350,96 @@ ul { list-style: none; }
 }
 
 /* ============================================================
+   شرائط العروض (فوق وتحت العنوان) - الإضافة الجديدة
+   ============================================================ */
+.promo-top,
+.promo-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px 20px;
+    padding: 14px 24px;
+    margin-bottom: 20px;
+    border-radius: 60px;
+    background: linear-gradient(135deg, rgba(245, 197, 24, 0.15), rgba(200, 16, 46, 0.15));
+    border: 1px solid var(--color-gold);
+    backdrop-filter: blur(6px);
+    transition: all 0.3s ease;
+}
+.promo-bottom {
+    margin-top: 30px;
+    margin-bottom: 0;
+    background: linear-gradient(135deg, rgba(200, 16, 46, 0.12), rgba(245, 197, 24, 0.08));
+}
+
+.promo-text {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--text-main);
+}
+.promo-text::before {
+    content: "✨ ";
+    color: var(--color-gold);
+}
+
+.promo-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--color-gold);
+    color: #0a0a0a;
+    font-weight: 700;
+    padding: 8px 24px;
+    border-radius: 40px;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    border: none;
+    box-shadow: 0 4px 15px rgba(245, 197, 24, 0.3);
+}
+.promo-link i {
+    font-size: 1.2rem;
+}
+.promo-link:hover {
+    transform: scale(1.05) translateY(-2px);
+    box-shadow: 0 8px 25px rgba(245, 197, 24, 0.5);
+    background: #e6b800;
+}
+
+/* تنسيق خاص بالوضع الفاتح */
+[data-theme="light"] .promo-top,
+[data-theme="light"] .promo-bottom {
+    background: rgba(0, 0, 0, 0.04);
+    border-color: var(--color-red);
+}
+[data-theme="light"] .promo-link {
+    color: #fff;
+    background: var(--color-red);
+}
+[data-theme="light"] .promo-link:hover {
+    background: #a00d25;
+}
+
+/* استجابة للجوال */
+@media (max-width: 600px) {
+    .promo-top,
+    .promo-bottom {
+        flex-direction: column;
+        padding: 16px;
+        gap: 10px;
+        border-radius: 30px;
+    }
+    .promo-text {
+        font-size: 1rem;
+    }
+    .promo-link {
+        font-size: 0.9rem;
+        padding: 6px 18px;
+    }
+}
+
+/* ============================================================
    باقي أنماط المنيو (نفس الكود السابق)
    ============================================================ */
 .menu-section { padding: 100px 0 60px; background: var(--bg-section); margin-top: 70px; transition: background 0.35s; }
